@@ -5,9 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+
+mongoose.set('useCreateIndex', true);
+mongoose.connect('mongodb://localhost/university_db',{
+useNewUrlParser: true
+});
+
+var db = mongoose.connection;
 var app = express();
 console.log("Hi,I am Nodemon & I Am Ready To GO :)");
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Courses Database Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+      h3{
+          color: blue;
+          font-style: italic;
+      
+      }
+      h2{
+          color: red;
+          background-color: black;
+      }
+      h1{
+          background-color: yellowgreen;
+      }
+      
+      body{
+          margin: 0;
+          padding: 0;
+      }
+      #no{
+        background-color: black;
+        color:blue;
+      }
+      #na{
+        background-color: black;
+        color: orangered;
+      }
+      
+      </style>
+</head>
+<body>
+    
+    <a href="/course"><button type="submit" class="btn btn-warning">Add More Into Courses Database </button></a>
+    <a href="/"><button type="submit" class="btn btn-primary">Home</button></a>
+    <a href="/task4"><input type="submit" value="Cancel" class="btn btn-danger"> </a>
+    <hr>
+    <form action="/ctable" method="POST">
+      <h3>university_db</h3>
+      <p>DBs "university_db", Table Name "courses":</p> 
+<div class="container">
+            
+  <table class="table table-bordered">
+    <thead id="no">
+      <tr>
+          <th>NO</th>
+        <th>DEPARTMENT</th>
+        <th>Course Name</th>
+        <th>Course Code</th>
+        <th>Course Credit</th>
+        <th>Semester Name</th>
+      
+      </tr>
+    </thead>
+    <tbody id="na"> <% for(var i=0; i < info.length; i++) { %>
+      <tr>
+          <td># <%= (i+1) %></td>
+          <td><%= info[i].cfor %></td>
+           <td><%= info[i].coname %></td>
+           <td><%= info[i].cocode %></td>
+           <td><%= info[i].coc %></td>
+           <td><%= info[i].sem %></td>
+      </tr>
+  <% } %>
+     
+    </tbody>
+  </table>
+</div>
+</form>
+</body>
+</html>
+
