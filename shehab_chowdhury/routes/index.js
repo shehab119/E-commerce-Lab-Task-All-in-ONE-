@@ -36,4 +36,41 @@ router.get('/task2p5', function(req, res, next) {
 });
 /* Ends of Task 2*/
 
+/* Task 3 Started From Here*/ 
+router.get('/task3', function(req, res, next) {
+  res.render('task3');
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+
+router.post('/login', function(req, res, next) {
+
+  var stdname = req.body.stdname;
+  var stdid = req.body.stdid;
+
+  console.log(stdname + " " + stdid);
+
+  res.render('login');
+});
+
+router.get('/signup', function(req, res, next) {
+  res.render('signup');
+});
+
+router.post('/signup', function(req, res, next) {
+
+  var sname = req.body.sname;
+  var spsw = req.body.spsw;
+  var gen = req.body.gen;
+  var sno = req.body.sno;
+
+
+  console.log(sname + "_" + spsw + "_" + gen + "_" + sno);
+
+  res.render('signup');
+});
+
+/* Ends of Task 3 */
 module.exports = router;

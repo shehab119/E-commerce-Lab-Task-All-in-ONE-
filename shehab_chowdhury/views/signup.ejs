@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUP</title>
+</head>
+<body>
+<form action="/signup" method="POST">
+    <h1> Welcome To Signup Page </h1>
+    <hr>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input name="sname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input name="spsw" type="text" class="form-control" id="exampleInputPassword1" placeholder="password">
+      </div>
+     <div class="form-group">
+        <label for="exampleInputEmail1">Phone Number</label>
+        <input name="sno" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Phone number">
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+       <p><b>Select your Religion:</b>
+        <select name="gen">
+                
+            <option>Muslim</option>
+            <option>Hindu</option>
+            <option>Others</option>
+            
+        </select>
+    
+    </p>
+      
+      <button type="submit" class="btn btn-primary">Signup</button>
+      </div>
+    </form>
+    <a href="/task3"><input type="submit" value="Cancel" class="btn btn-danger"> </a>
+      </body>
+    </html>
