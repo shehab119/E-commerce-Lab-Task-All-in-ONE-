@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>||Task 5||</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+      h3{
+          color: blue;
+          font-style: italic;
+      
+      }
+      h2{
+          color: red;
+          background-color: black;
+      }
+      h1{
+          background-color: yellowgreen;
+      }
+      
+      body{
+          margin: 0;
+          padding: 0;
+      }
+      #no{
+        background-color: black;
+        color:blue;
+      }
+      #na{
+        background-color: black;
+        color: orangered;
+      }
+      #ni{
+        background-color: black;
+        color: red;
+      }
+      </style>
+</head>
+<body>
+    
+    <a href="/task5"><button type="submit" class="btn btn-warning">Add More</button></a>
+    <a href="/"><input type="submit" value="Home" class="btn btn-success"> </a>
+    <form action="/table" method="POST">
+<div class="container">
+  <h1>Welcome To Task 5 </h1>
+  <h2>Edit & Delete</h2>          
+  <table class="table table-bordered">
+    <thead id="no">
+      <tr>
+          <th>NO</th>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>Comments</th>
+        <th>Edit/Delete</th>
+      
+      </tr>
+    </thead>
+    <tbody id = "na"> <% for(var i=0; i < info.length; i++) { %>
+      <tr>
+          <td># <%= (i+1) %></td>
+          <td><%= info[i].lid %></td>
+           <td><%= info[i].lname %></td>
+           <td><%= info[i].lcom %></td>
+
+           <td id ="ni"> 
+            <a id="ni"class="btn btn-xs btn-warning btn-edit" href="/edit/<%=info[i]._id %>">Edit</a>
+
+            <a id="ni"class="btn btn-xs btn-danger btn-delete" href="/delete/<%=info[i]._id %>">Delete</a>
+
+          </td>
+      </tr>
+  <% } %>
+     
+    </tbody>
+  </table>
+</div>
+</form>
+</body>
+</html>
+

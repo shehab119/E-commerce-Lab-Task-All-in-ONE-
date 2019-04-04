@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<title> ||Task 5|| </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+    h3{
+        color: blue;
+        font-style: italic;
+    
+    }
+    h2{
+        color: red;
+        background-color: black;
+    }
+    h1{
+        background-color: yellowgreen;
+    }
+    
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    </style>  
+</head>
+  <body>
+   <form action="/task5" method="POST">
+<h1> Welcome To Task 5</h1>
+<h2>Edit & Delete</h2>
+<img class="logo" src="http://localhost:3000/images/login.png" width="200">
+<hr>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Student name</label>
+    <input name="lname" required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">ID</label>
+    <input name="lid" required type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Your ID">
+  </div>
+
+  <div class="form-group">
+      <label for="exampleInputPassword1">Comments</label>
+      <input name="lcom" required type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Comments">
+    </div>
+  <button type="submit" class="btn btn-success">Add & Show</button>
+</form>
+<a href="/"><input type="submit" class="btn btn-info" value="Homepage"> </a>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Update Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+      h3{
+          color: blue;
+          font-style: italic;
+      
+      }
+      h2{
+          color: red;
+          background-color: black;
+      }
+      h1{
+          background-color: yellowgreen;
+      }
+      
+      body{
+          margin: 0;
+          padding: 0;
+      }
+      
+      </style>
+</head>
+<body>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>Edit or Cancel </h1>
+    <form class="form-horizontal" action="/task5" method="post">
+      <div class="form-group">
+        <label for="id">Student ID:</label>
+        <input required type="text" class="form-control"  placeholder="Enter std id" name="lid" value="<%=info[0].lid%>">
+      </div>
+      
+      <div class="form-group">
+        <label for="Book name">Student Name:</label>
+        <input required type="text" class="form-control"  placeholder="Enter std name" name="lname" value="<%=info[0].lname%>">
+      </div>
+
+
+      <div class="form-group">
+          <label for="Book name">Comments:</label>
+          <input required type="text" class="form-control"  placeholder="Enter Comments" name="lcom" value="<%=info[0].lcom%>">
+        </div>
+  
+      <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+     <a href="/table"><input type="submit" value="Cancel" class="btn btn-danger"> </a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+<div class="container">
+  
+</div>
+
+</body>
+</html>

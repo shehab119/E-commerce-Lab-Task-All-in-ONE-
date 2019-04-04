@@ -350,5 +350,89 @@ router.post('/course', function(req, res, next) {
   });
 /* Ends of Task 4 */
 
+ /* Task 5 Staeted From Here */
 
+ var ED=require('../models/login'); /*conect with model.js*/
+
+
+/* GET home page. */
+router.get('/task5', function(req, res, next) {
+  res.render('task5');
+});
+
+
+router.get('/table',function(req,res,next){
+	ED.find(function(err,results){
+    	if (err) return console.error(err);
+    	else{
+    		res.render('table',{info:results});
+    	}
+  	});
+});
+
+
+
+router.post('/task5', function(req, res, next) {
+
+var lid = req.body.lid;
+var lname = req.body.lname;
+var lcom = req.body.lcom;
+
+console.log(lid + " " + lname + " _" + lcom);
+console.log("Login Sucessfully ");
+
+var query={lid:lid};/*NEw pdate*/
+
+ED.findOneAndUpdate(query,{
+  $set:{
+    lname:lname,
+    lid:lid,
+    lcom:lcom
+  }
+},{
+  new:true,
+  upsert:true
+},function(err, doc){
+  if (err) {
+    console.log("Spmething Wrong!!!CANdy");
+  }
+});
+  
+  res.redirect('/table');
+});
+
+
+router.get('/edit/:id',function(req,res,next){
+  var id = req.params.id;
+  var query={_id:id};
+
+    ED.find(query,
+      function(err, results) {
+        if (err) throw err;
+        console.log(results);
+        res.render('updateindex',{info:results});
+    });
+
+
+  });
+
+
+router.get('/delete/:id',function(req,res,next){
+	var id = req.params.id;
+  	var query={_id:id};
+
+  	ED.remove({
+    	_id: id
+  		}, function(err) {
+    	if (err) throw err;
+    	res.redirect('/table');
+  });
+
+});
+/*Ends of Task 5 */
+/*About */
+
+router.get('/about', function(req, res, next) {
+  res.render('about');
+});
 module.exports = router;
